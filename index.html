@@ -1,0 +1,1155 @@
+  
+<!doctype html>
+<html lang="id">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rama Maulana Silalahi - Mahasiswa Informatika Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+          
+     .gradient-bg {
+  background: radial-gradient(circle at top, #7dd3fc 0%, #38bdf8 40%, #0c4a6e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-bg {
+  background: radial-gradient(circle at top, #0f172a 0%, #020617 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* lightning layer */
+.lightning {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      115deg,
+      transparent,
+      transparent 60px,
+      rgba(96,165,250,0.25) 62px,
+      transparent 64px
+    );
+  opacity: 0;
+  transition: opacity .25s;
+  z-index: 1;
+}
+ 
+
+      .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+          
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+          
+      .pulse-glow {
+        animation: pulseGlow 2s ease-in-out infinite;
+      }
+          
+      @keyframes pulseGlow {
+        0%, 100% { box-shadow: 0 0 20px rgba(96, 165, 250, 0.3); }
+        50% { box-shadow: 0 0 40px rgba(96, 165, 250, 0.6); }
+      }
+          
+      .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+          
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      }
+          
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+          
+      ::-webkit-scrollbar-track {
+        background: #1e3a5f;
+      }
+          
+      ::-webkit-scrollbar-thumb {
+        background: #60a5fa;
+        border-radius: 4px;
+      }
+      .cyber-glow {
+  text-shadow: 0 0 20px #60a5fa;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* lightning zigzag */
+.zap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, transparent 40%, rgba(96,165,250,.4) 50%, transparent 60%);
+  opacity: 0;
+}
+
+/* particles */
+.particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: #60a5fa;
+  border-radius: 50%;
+  animation: float 8s linear infinite;
+  opacity:.6;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+
+/* jadwal hari ini */
+.today {
+  border:2px solid #60a5fa;
+  box-shadow:0 0 15px #60a5fa;
+}
+
+/* realtime clock */
+#clock {
+  position: fixed;
+  bottom:20px;
+  right:20px;
+  background:#020617;
+  padding:8px 14px;
+  border-radius:10px;
+  border:1px solid #60a5fa;
+  font-size:14px;
+}
+/* LOADING */
+#loader{
+position:fixed;
+inset:0;
+background:#020617;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+color:#60a5fa;
+font-size:28px;
+letter-spacing:4px;
+}
+
+/* GLITCH */
+.glitch {
+position:relative;
+animation:glitch 1s infinite;
+}
+
+@keyframes glitch{
+0%{text-shadow:2px 0 red;}
+20%{text-shadow:-2px 0 cyan;}
+40%{text-shadow:2px 2px lime;}
+60%{text-shadow:-2px -2px magenta;}
+100%{text-shadow:0 0 20px #60a5fa;}
+}
+
+/* smooth scroll */
+html{
+scroll-behavior:smooth;
+}
+#terminal{
+  display: none; /* ⬅️ ini kuncinya */
+  position:relative;
+  width:100%;
+  height:120px;
+  background:black;
+  color:#22c55e;
+  font-family:monospace;
+  padding:10px;
+  overflow:auto;
+  margin-top:40px;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+
+
+#chatbot{
+position:fixed;
+right:20px;
+bottom:220px;
+background:#020617;
+padding:10px;
+border-radius:10px;
+width:220px;
+}
+
+#chatInput{
+width:100%;
+background:black;
+color:#22c55e;
+border:none;
+padding:5px;
+}
+img{
+box-shadow:0 0 40px rgba(96,165,250,.7);
+border-radius:9999px;
+}
+html,body{
+min-height:100%;
+overflow-y:auto !important;
+}
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:0.8s;
+}
+
+.reveal.active{
+opacity:1;
+transform:none;
+
+}
+.tech-bar{
+animation: techload 2s ease;
+color:white;
+font-size:11px;
+padding-left:8px;
+}
+
+@keyframes techload{
+from{width:0;}
+}
+.tech{
+font-size:16px;
+}
+
+.bar{
+width:100%;
+height:12px;
+background:#020617;
+border-radius:10px;
+overflow:hidden;
+margin-top:6px;
+border:1px solid #60a5fa;
+}
+
+.bar span{
+display:block;
+height:100%;
+background:linear-gradient(90deg,#38bdf8,#60a5fa);
+box-shadow:0 0 15px #60a5fa;
+animation:load 2s ease forwards;
+}
+
+@keyframes load{
+from{width:0;}
+}
+
+.reveal.active .bar span{
+animation:load 2s ease forwards;
+}
+.form-input{
+width:100%;
+padding:14px;
+background:#020617;
+border:1px solid #334155;
+border-radius:10px;
+outline:none;
+}
+
+.form-input:focus{
+border-color:#60a5fa;
+box-shadow:0 0 15px #60a5fa;
+}
+
+.submit-btn{
+width:100%;
+padding:14px;
+background:#2563eb;
+border-radius:10px;
+font-weight:600;
+transition:.3s;
+}
+
+.submit-btn:hover{
+box-shadow:0 0 30px #60a5fa;
+transform:scale(1.05);
+}
+
+/* floating icons */
+.floating-icons{
+position:fixed;
+bottom:30px;
+right:30px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.float-btn{
+width:50px;
+height:50px;
+border-radius:50%;
+background:#2563eb;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 0 15px #60a5fa;
+transition:.3s;
+}
+
+.float-btn:hover{
+transform:scale(1.2);
+}
+#godTerminal{
+position:fixed;
+bottom:20px;
+right:20px;
+width:300px;
+background:black;
+border:1px solid #22c55e;
+border-radius:8px;
+font-family:monospace;
+color:#22c55e;
+box-shadow:0 0 20px #22c55e;
+z-index:99;
+}
+
+.terminal-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#052e16;
+padding:6px 10px;
+font-size:12px;
+}
+
+.terminal-header button{
+background:none;
+border:none;
+color:#22c55e;
+cursor:pointer;
+}
+
+#terminalContent{
+padding:10px;
+height:120px;
+overflow:auto;
+font-size:12px;
+}
+
+.minimized #terminalContent{
+display:none;
+}
+
+   </style>
+    <style>@view-transition { navigation: auto; }</style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+    <script>
+const lightning = document.querySelector(".lightning");
+const home = document.getElementById("home");
+
+window.addEventListener("scroll", () => {
+
+  const y = window.scrollY;
+
+  /* petir muncul saat scroll */
+  lightning.style.opacity = "0.4";
+
+  clearTimeout(window.flash);
+  window.flash = setTimeout(()=>{
+    lightning.style.opacity = "0";
+  },200);
+
+  /* parallax hero */
+  home.style.transform = `translateY(${y * 0.12}px)`;
+
+});
+
+</script>
+<script>
+/* navbar hide */
+let last=0;
+window.addEventListener("scroll",()=>{
+const nav=document.querySelector("nav");
+let y=window.scrollY;
+nav.style.top=y>last?"-90px":"0";
+last=y;
+});
+
+/* reveal */
+document.querySelectorAll("section").forEach(s=>s.classList.add("reveal"));
+window.addEventListener("scroll",()=>{
+document.querySelectorAll(".reveal").forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-100)
+el.classList.add("active");
+});
+});
+
+/* zigzag lightning */
+const zap=document.querySelector(".zap");
+setInterval(()=>{
+zap.style.opacity=.5;
+setTimeout(()=>zap.style.opacity=0,150);
+},2500);
+
+/* particles */
+for(let i=0;i<25;i++){
+let p=document.createElement("div");
+p.className="particle";
+p.style.left=Math.random()*100+"%";
+p.style.animationDelay=Math.random()*8+"s";
+document.body.appendChild(p);
+}
+
+/* realtime clock */
+setInterval(()=>{
+document.getElementById("clock").innerText=
+new Date().toLocaleTimeString();
+},1000);
+
+/* highlight today */
+const days=["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+const today=days[new Date().getDay()];
+document.querySelectorAll("#schedule h3").forEach(h=>{
+if(h.innerText==today) h.parentElement.classList.add("today");
+});
+
+/* hero parallax */
+window.addEventListener("scroll",()=>{
+home.style.transform=`translateY(${scrollY*.12}px)`;
+});
+
+</script>
+<script>
+/* loading */
+window.onload=()=>{
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},2000);
+}
+
+/* glitch hero */
+document.getElementById("hero-name").classList.add("glitch");
+
+/* click sound */
+document.addEventListener("click",()=>{
+document.getElementById("click").play();
+});
+</script>
+<div id="terminal" onclick="this.style.display='none'">
+
+<pre id="termText"></pre>
+</div>
+
+
+</script>
+<script>
+window.addEventListener("scroll",()=>{
+
+const bolt=document.createElement("div");
+
+bolt.style.position="fixed";
+bolt.style.left=Math.random()*window.innerWidth+"px";
+bolt.style.top="0";
+bolt.style.width="2px";
+bolt.style.height="100vh";
+bolt.style.background="linear-gradient(white,#60a5fa)";
+bolt.style.opacity="0.8";
+bolt.style.pointerEvents="none";
+bolt.style.zIndex="9999";
+
+document.body.appendChild(bolt);
+
+setTimeout(()=>bolt.remove(),150);
+
+});
+</script>
+<script>
+const text = "Rama Maulana Silalahi";
+let typeIndex = 0;
+
+function typing() {
+  if (typeIndex < text.length) {
+    document.getElementById("hero-name").innerHTML += text.charAt(typeIndex);
+    typeIndex++;
+    setTimeout(typing, 80);
+  }
+}
+
+document.getElementById("hero-name").innerHTML="";
+typing();
+</script>
+
+
+<script>
+const glow = document.createElement("div");
+glow.style.cssText=`
+position:fixed;
+width:120px;
+height:120px;
+border-radius:50%;
+background:radial-gradient(circle,#60a5fa55,transparent);
+pointer-events:none;
+z-index:9999;
+`;
+
+document.body.appendChild(glow);
+
+window.addEventListener("mousemove",e=>{
+glow.style.left=e.clientX-60+"px";
+glow.style.top=e.clientY-60+"px";
+});
+</script>
+<script>
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+const nav = document.querySelector("nav");
+let current = window.pageYOffset;
+
+if(current > lastScroll){
+nav.style.transform="translateY(-100%)";
+}else{
+nav.style.transform="translateY(0)";
+}
+
+lastScroll = current;
+});
+</script>
+
+<script>
+function copyEmail(){
+navigator.clipboard.writeText("emailkamu@gmail.com");
+alert("Email berhasil disalin!");
+}
+</script>
+<script>
+function toggleTerminal(){
+document.getElementById("godTerminal").classList.toggle("minimized");
+}
+
+function closeTerminal(){
+document.getElementById("godTerminal").style.display="none";
+}
+</script>
+
+
+
+
+ </head>
+ 
+  <body class="gradient-bg text-gray-100 overflow-auto">
+
+
+    <div id="app-wrapper" class="min-h-screen w-full">
+
+<div class="lightning"></div>
+<div class="zap"></div>
+<div id="clock"></div>
+<div id="loader">INITIALIZING AI...</div>
+
+<audio id="click">
+<source src="https://assets.mixkit.co/sfx/preview/mixkit-interface-click-1126.mp3">
+</audio>
+
+<audio autoplay loop volume="0.2">
+<source src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3">
+</audio>
+<!-- GOD TERMINAL -->
+<div id="godTerminal">
+
+<div class="terminal-header">
+<span>⚡ SYSTEM TERMINAL</span>
+<div>
+<button onclick="toggleTerminal()">_</button>
+<button onclick="closeTerminal()">✖</button>
+</div>
+</div>
+
+<pre id="terminalContent">
+> Initializing system...
+> Loading portfolio...
+> Access granted.
+</pre>
+
+</div>
+<div id="chatbot">
+<input id="chatInput" placeholder="Ask AI...">
+<div id="chatLog"></div>
+<!-- GOD TERMINAL -->
+
+
+
+
+</div>
+<div class="floating-icons">
+
+<a href="https://wa.me/628xxxxxxxxxx" class="float-btn">💬</a>
+
+<a href="#contact" class="float-btn">📧</a>
+
+</div>
+
+
+
+
+      <!-- Navigation -->
+      <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center font-bold text-lg">
+                RS
+              </div>
+              <span class="font-semibold text-lg">Portfolio</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+              <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors">Beranda</a>
+              <a href="#about" class="text-gray-300 hover:text-blue-400 transition-colors">Tentang</a>
+              <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-colors">Keahlian</a>
+              <a href="#experience" class="text-gray-300 hover:text-blue-400 transition-colors">Pengalaman</a>
+              <a href="#schedule" class="text-gray-300 hover:text-blue-400 transition-colors">Jadwal</a>
+              <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-colors">Proyek</a>
+              <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors">Kontak</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Hero Section -->
+      <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in" style="animation-delay: 0.2s;">
+            <p class="text-blue-400 font-medium mb-2">👋 Selamat Datang</p>
+            <h1 id="hero-name" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">Rama Maulana Silalahi</h1>
+            <h2 id="hero-title" class="text-xl md:text-2xl text-blue-300 font-medium mb-4">Mahasiswa Informatika</h2>
+         <div class="fade-in flex flex-col justify-center text-left max-w-xl">
+
+  Mahasiswa Teknik Informatika yang berfokus pada pengembangan aplikasi web dan mobile,
+  memiliki ketertarikan pada kecerdasan buatan, serta terbiasa membangun solusi digital
+  melalui proyek nyata dan pembelajaran berkelanjutan.
+</p>
+
+<div class="flex flex-wrap gap-4">
+  <a href="#projects"
+     class="px-8 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition-all hover-lift">
+    🚀 Lihat Proyek
+  </a>
+
+  <a href="#skills"
+     class="px-8 py-3 border border-blue-400 text-blue-300 hover:bg-blue-400/10 rounded-lg font-medium transition-all">
+    ⚡ Keahlian
+  </a>
+
+  <a href="CV_Rama_Maulana_Silalahi.pdf" download
+     class="px-8 py-3 border border-gray-500 hover:border-blue-400 rounded-lg font-medium transition-all hover:bg-white/5">
+    📄 Download CV
+  </a>
+</div>
+
+              <a href="#contact" class="px-8 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition-all hover-lift">Hubungi Saya</a>
+              <a href="#experience" class="px-8 py-3 border border-gray-500 hover:border-blue-400 rounded-lg font-medium transition-all hover:bg-white/5">Lihat Portofolio</a>
+            </div>
+          </div>
+          <div class="flex justify-center fade-in" style="animation-delay: 0.4s;">
+            <div class="relative">
+             <div class="w-64 h-64 md:w-80 md:h-80 rounded-full pulse-glow overflow-hidden border-4 border-blue-400">
+
+<img src="ramaee.jpg"
+class="w-full h-full object-cover hover:scale-110 transition duration-700">
+
+</div>
+
+              </div>
+              <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-slate-800 rounded-xl flex items-center justify-center border border-slate-600">
+                <span class="text-3xl">💻</span>
+              </div>
+              <div class="absolute -top-4 -left-4 w-16 h-16 bg-slate-800 rounded-xl flex items-center justify-center border border-slate-600">
+                <span class="text-2xl">🎓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="about" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Tentang Saya</h2>
+            <div class="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="card-gradient rounded-2xl p-8 border border-slate-600/50 hover-lift">
+              <p id="about-text" class="text-gray-300 leading-relaxed text-lg">Saya adalah mahasiswa Informatika di Universitas Mandiri Bina Prestasi  yang antusias dalam dunia teknologi. Saya memiliki minat besar di bidang pengembangan web, mobile apps, dan kecerdasan buatan. Saya percaya bahwa belajar adalah proses berkelanjutan, dan saya selalu berusaha untuk mengembangkan skill saya melalui proyek-proyek praktis dan kursus online.</p>
+              <div class="mt-8 grid grid-cols-2 gap-6">
+                <div class="text-center p-4 bg-slate-800/50 rounded-xl">
+                  <p class="text-3xl font-bold text-blue-400">3</p>
+                  <p class="text-gray-400 text-sm">Tahun Kuliah</p>
+                </div>
+                <div class="text-center p-4 bg-slate-800/50 rounded-xl">
+                  <p class="text-3xl font-bold text-blue-400">15+</p>
+                  <p class="text-gray-400 text-sm">Proyek Selesai</p>
+                </div>
+                <div class="text-center p-4 bg-slate-800/50 rounded-xl">
+                  <p class="text-3xl font-bold text-blue-400">5</p>
+                  <p class="text-gray-400 text-sm">Organisasi</p>
+                </div>
+                <div class="text-center p-4 bg-slate-800/50 rounded-xl">
+                  <p class="text-3xl font-bold text-blue-400">10+</p>
+                  <p class="text-gray-400 text-sm">Sertifikasi</p>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <div class="card-gradient rounded-xl p-6 border border-slate-600/50 hover-lift">
+                <div class="flex items-center gap-4 mb-3">
+                  <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl">🎯</span>
+                  </div>
+                  <h3 class="text-xl font-semibold">Visi</h3>
+                </div>
+                <p class="text-gray-400">Menjadi developer handal yang dapat berkontribusi dalam industri teknologi melalui inovasi dan solusi digital.</p>
+              </div>
+              <div class="card-gradient rounded-xl p-6 border border-slate-600/50 hover-lift">
+                <div class="flex items-center gap-4 mb-3">
+                  <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl">💡</span>
+                  </div>
+                  <h3 class="text-xl font-semibold">Pendekatan</h3>
+                </div>
+                <p class="text-gray-400">Belajar melalui praktik langsung, kolaborasi tim, dan eksplorasi teknologi terbaru untuk menghasilkan solusi yang efektif.</p>
+              </div>
+              <div class="card-gradient rounded-xl p-6 border border-slate-600/50 hover-lift">
+                <div class="flex items-center gap-4 mb-3">
+                  <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl">🌟</span>
+                  </div>
+                  <h3 class="text-xl font-semibold">Nilai</h3>
+                </div>
+                <p class="text-gray-400">Integritas, kreativitas, dan komitmen untuk terus belajar dan beradaptasi dengan perkembangan teknologi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="experience" class="py-20 px-6 bg-slate-900/40">
+<div class="max-w-6xl mx-auto">
+
+<div class="text-center mb-14">
+<h2 class="text-3xl font-bold mb-3">Pengalaman</h2>
+<div class="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+</div>
+
+<div class="space-y-6">
+
+<div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+<h3 class="text-xl font-semibold">📌 Web Developer (Project Kampus)</h3>
+<p class="text-blue-400 text-sm mb-2">2024 – Sekarang</p>
+<p class="text-gray-300">
+Mengembangkan aplikasi web menggunakan HTML, Tailwind CSS, JavaScript, PHP, dan MySQL untuk sistem stok pakan ternak, login admin, serta laporan transaksi.
+</p>
+</div>
+
+<div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+<h3 class="text-xl font-semibold">📌 Mobile App Mini Project</h3>
+<p class="text-blue-400 text-sm mb-2">2024</p>
+<p class="text-gray-300">
+Membuat aplikasi Android sederhana untuk pencatatan data menggunakan Flutter dan Firebase sebagai backend.
+</p>
+</div>
+
+<div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+<h3 class="text-xl font-semibold">📌 Artificial Intelligence Project</h3>
+<p class="text-blue-400 text-sm mb-2">2025</p>
+<p class="text-gray-300">
+Mengembangkan sistem klasifikasi gambar berbasis TensorFlow.js untuk deteksi sampah menggunakan model Teachable Machine.
+</p>
+</div>
+
+<div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+<h3 class="text-xl font-semibold">📌 Asisten Praktikum</h3>
+<p class="text-blue-400 text-sm mb-2">Universitas Mandiri Bina Prestasi</p>
+<p class="text-gray-300">
+Membantu mahasiswa dalam praktikum pemrograman dasar, basis data, dan web development.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+<section id="projects" class="py-20 px-6">
+<div class="max-w-6xl mx-auto">
+
+<div class="text-center mb-14">
+<h2 class="text-3xl font-bold mb-3">Proyek Unggulan</h2>
+<div class="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+</div>
+
+
+<div class="grid md:grid-cols-3 gap-6">
+
+  <!-- 1 -->
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-lg mb-2">AI Trash Scanner</h3>
+    <p class="text-gray-300 text-sm">
+      Sistem klasifikasi sampah berbasis TensorFlow.js & Teachable Machine untuk edukasi lingkungan.
+    </p>
+    <p class="text-blue-400 text-xs mt-2">AI • JavaScript • ML</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-lg mb-2">Sistem Stok Pakan Ternak</h3>
+    <p class="text-gray-300 text-sm">
+      Aplikasi web CRUD untuk manajemen supplier, stok, transaksi, dan laporan berbasis PHP & MySQL.
+    </p>
+    <p class="text-blue-400 text-xs mt-2">PHP • MySQL • Tailwind</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-lg mb-2">Personal Portfolio Website</h3>
+    <p class="text-gray-300 text-sm">
+      Website portfolio interaktif dengan animasi, efek parallax, dan UI modern.
+    </p>
+    <p class="text-blue-400 text-xs mt-2">HTML • Tailwind • JavaScript</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-lg mb-2">Sistem Login & Role Admin</h3>
+    <p class="text-gray-300 text-sm">
+      Sistem autentikasi dengan role-based access (Admin & User) dan enkripsi password.
+    </p>
+    <p class="text-blue-400 text-xs mt-2">PHP • MySQL • Security</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-lg mb-2">Aplikasi Catatan Mahasiswa</h3>
+    <p class="text-gray-300 text-sm">
+      Aplikasi Android untuk mencatat jadwal, tugas, dan deadline kuliah.
+    </p>
+    <p class="text-blue-400 text-xs mt-2">Flutter • Firebase</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-lg mb-2">Sistem Absensi QR Code</h3>
+    <p class="text-gray-300 text-sm">
+      Sistem absensi berbasis QR Code untuk kelas dan praktikum.
+    </p>
+    <p class="text-blue-400 text-xs mt-2">JavaScript • PHP • MySQL</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-lg mb-2">REST API Akademik</h3>
+    <p class="text-gray-300 text-sm">
+      REST API untuk data mahasiswa, mata kuliah, dan nilai.
+    </p>
+    <p class="text-blue-400 text-xs mt-2">Node.js • Express • JSON</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-lg mb-2">Sistem Manajemen Perpustakaan</h3>
+    <p class="text-gray-300 text-sm">
+      Aplikasi web untuk peminjaman buku, data anggota, dan laporan.
+    </p>
+    <p class="text-blue-400 text-xs mt-2">PHP • MySQL • Bootstrap</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-lg mb-2">Website Company Profile</h3>
+    <p class="text-gray-300 text-sm">
+      Website profesional untuk UMKM dengan desain modern dan responsif.
+    </p>
+    <p class="text-blue-400 text-xs mt-2">HTML • CSS • JavaScript</p>
+  </div>
+
+</div>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 px-6 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Keahlian</h2>
+            <div class="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Technical Skills -->
+            <div class="card-gradient rounded-2xl p-8 border border-slate-600/50">
+              <h3 class="text-xl font-semibold mb-6 flex items-center gap-3">
+                <span class="text-2xl">⚡</span> Keahlian Teknis
+              </h3>
+              <div class="space-y-5">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-300">Web Development</span>
+                    <span class="text-blue-400">85%</span>
+                  </div>
+                  <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="skill-bar h-full rounded-full" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-300">Python Programming</span>
+                    <span class="text-blue-400">80%</span>
+                  </div>
+                  <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="skill-bar h-full rounded-full" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-300">JavaScript</span>
+                    <span class="text-blue-400">75%</span>
+                  </div>
+                  <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="skill-bar h-full rounded-full" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-300">Database Management</span>
+                    <span class="text-blue-400">70%</span>
+                  </div>
+                  <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="skill-bar h-full rounded-full" style="width: 70%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-300">Mobile Development</span>
+                    <span class="text-blue-400">65%</span>
+                  </div>
+                  <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="skill-bar h-full rounded-full" style="width: 65%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Soft Skills -->
+            <div class="card-gradient rounded-2xl p-8 border border-slate-600/50">
+              <h3 class="text-xl font-semibold mb-6 flex items-center gap-3">
+                <span class="text-2xl">📚</span> Keahlian Lain
+              </h3>
+              <div class="space-y-5">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-300">Problem Solving</span>
+                    <span class="text-blue-400">90%</span>
+                  </div>
+                  <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="skill-bar h-full rounded-full" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-300">Team Collaboration</span>
+                    <span class="text-blue-400">85%</span>
+                  </div>
+                  <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="skill-bar h-full rounded-full" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-300">Project Management</span>
+                    <span class="text-blue-400">75%</span>
+                  </div>
+                  <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="skill-bar h-full rounded-full" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-300">Communication</span>
+                    <span class="text-blue-400">80%</span>
+                  </div>
+                  <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="skill-bar h-full rounded-full" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-300">Adaptability</span>
+                    <span class="text-blue-400">85%</span>
+                  </div>
+                  <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="skill-bar h-full rounded-full" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Schedule Section -->
+<section id="schedule" class="py-20 px-6">
+ <div class="grid md:grid-cols-3 gap-6">
+
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-xl mb-2">Senin</h3>
+    <p class="text-gray-300">Pemrograman Web</p>
+    <p class="text-sm text-blue-300">08:00 – 10:00</p>
+  </div>
+
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-xl mb-2">Selasa</h3>
+    <p class="text-gray-300">Basis Data</p>
+    <p class="text-sm text-blue-300">09:00 – 11:00</p>
+  </div>
+
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-xl mb-2">Rabu</h3>
+    <p class="text-gray-300">Struktur Data</p>
+    <p class="text-sm text-blue-300">10:00 – 12:00</p>
+  </div>
+
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-xl mb-2">Kamis</h3>
+    <p class="text-gray-300">AI Dasar</p>
+    <p class="text-sm text-blue-300">13:00 – 15:00</p>
+  </div>
+
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-xl mb-2">Jumat</h3>
+    <p class="text-gray-300">Mobile Programming</p>
+    <p class="text-sm text-blue-300">08:00 – 10:00</p>
+  </div>
+
+  <div class="card-gradient p-6 rounded-xl border border-slate-600 hover-lift">
+    <h3 class="font-semibold text-xl mb-2">Sabtu</h3>
+    <p class="text-gray-300">Project Mandiri</p>
+    <p class="text-sm text-blue-300">09:00 – 11:00</p>
+  </div>
+  </section>
+
+  <!-- FINAL BOSS CONTACT -->
+<section id="contact" class="py-32 px-6 relative overflow-hidden">
+
+<h2 class="text-4xl font-bold text-center cyber-glow mb-16">CONTACT ME</h2>
+
+<div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+
+<!-- LEFT -->
+<div class="ultimate-contact space-y-6 fade-in">
+
+<p onclick="copyEmail()" class="contact-card cursor-pointer">
+📧 Email<br>
+<b id="email">sramamaulana@gmail.com</b>
+</p>
+
+<a href="https://github.com/ramaxyz22" target="_blank" class="contact-card">
+🐙 GitHub<br>github.com/ramaxyz22
+</a>
+
+<a href="https://wa.me/6285609635578" target="_blank" class="contact-card whatsapp">
+💬 WhatsApp<br>Chat Sekarang
+</a>
+
+<a href="CV_Rama_Maulana_Silalahi.pdf" download class="contact-card">
+📄 Download CV
+</a>
+
+</div>
+
+<!-- RIGHT FORM -->
+<form class="ultimate-contact space-y-4">
+
+<input class="form-input" placeholder="Nama">
+<input class="form-input" placeholder="Email">
+<textarea class="form-input h-32" placeholder="Pesan"></textarea>
+
+<button class="submit-btn">Kirim Pesan</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+</div>
+
+ 
+
+</div>
+</section>
+
+
+  </div>
+</div>
+</body>
+<h3 class="text-3xl font-bold mb-10 text-center cyber-glow">
+🚀 Tech Stack
+</h3>
+
+<div id="tech" class="max-w-xl mx-auto space-y-6 reveal">
+
+<div class="tech">
+⚡ HTML
+<div class="bar"><span style="width:90%"></span></div>
+</div>
+
+<div class="tech">
+🎨 Tailwind / CSS
+<div class="bar"><span style="width:85%"></span></div>
+</div>
+
+<div class="tech">
+🧠 JavaScript
+<div class="bar"><span style="width:75%"></span></div>
+</div>
+
+<div class="tech">
+🐘 PHP
+<div class="bar"><span style="width:70%"></span></div>
+</div>
+
+<div class="tech">
+🗄 MySQL
+<div class="bar"><span style="width:70%"></span></div>
+</div>
+
+<div class="tech">
+🐍 Python
+<div class="bar"><span style="width:65%"></span></div>
+</div>
+
+<div class="tech">
+🌐 Git / GitHub
+<div class="bar"><span style="width:60%"></span></div>
+</div>
+
+<div class="tech">
+🤖 Basic AI
+<div class="bar"><span style="width:60%"></span></div>
+</div>
+<footer class="text-center py-10 border-t border-slate-700 text-gray-400">
+© 2026 Rama Maulana Silalahi — Informatics Engineering Student
+</footer>
+
+</html>
