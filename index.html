@@ -360,6 +360,67 @@ font-size:12px;
 .minimized #terminalContent{
 display:none;
 }
+/* ===================== */
+/* MOBILE FIX (ANDROID) */
+/* ===================== */
+@media (max-width: 768px) {
+
+  /* HERO jadi 1 kolom rapi */
+  #home .grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  #home h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  #home h2 {
+    font-size: 1.2rem;
+  }
+
+  #home p {
+    text-align: center;
+  }
+
+  /* FOTO TIDAK TERLALU BESAR */
+  #home img {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  /* BUTTON CENTER */
+  #home .flex-wrap {
+    justify-content: center;
+  }
+
+  /* MATIKAN EFEK BERAT */
+  .particle,
+  .zap,
+  .lightning {
+    display: none;
+  }
+
+  /* TERMINAL & CHATBOT DISEMBUNYIKAN */
+  #godTerminal,
+  #chatbot,
+  #clock {
+    display: none;
+  }
+
+  /* FLOATING ICON TETAP ADA TAPI LEBIH KECIL */
+  .floating-icons {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .float-btn {
+    width: 42px;
+    height: 42px;
+  }
+}
+
 
    </style>
     <style>@view-transition { navigation: auto; }</style>
@@ -380,9 +441,9 @@ window.addEventListener("scroll", () => {
     lightning.style.opacity = "0";
   },200);
 
-  /* parallax hero */
+ if (window.innerWidth > 768) {
   home.style.transform = `translateY(${y * 0.12}px)`;
-
+}
 });
 
 </script>
@@ -515,10 +576,14 @@ z-index:9999;
 
 document.body.appendChild(glow);
 
-window.addEventListener("mousemove",e=>{
-glow.style.left=e.clientX-60+"px";
-glow.style.top=e.clientY-60+"px";
-});
+
+if (window.innerWidth > 768) {
+  window.addEventListener("mousemove", e => {
+    glow.style.left = e.clientX - 60 + "px";
+    glow.style.top = e.clientY - 60 + "px";
+  });
+}
+
 </script>
 <script>
 let lastScroll = 0;
