@@ -370,7 +370,12 @@ display:none;
     grid-template-columns: 1fr !important;
     text-align: center;
   }
-
+@media (max-width:768px){
+  #home a{
+    width:100%;
+    text-align:center;
+  }
+}
   #home h1 {
     font-size: 2.2rem;
     line-height: 1.2;
@@ -619,7 +624,55 @@ document.getElementById("godTerminal").style.display="none";
 </script>
 
 
+<script>
+window.addEventListener("load", function(){
 
+  // Delay supaya tidak tabrakan dengan loading screen
+  setTimeout(() => {
+
+    if ('speechSynthesis' in window) {
+
+      const text = "Halo, perkenalkan saya asisten dari Rama. Selamat datang di portfolio Rama. Senang bertemu dengan anda.";
+
+      const speech = new SpeechSynthesisUtterance(text);
+
+      speech.lang = "id-ID";       // Bahasa Indonesia
+      speech.rate = 0.9;           // Kecepatan bicara
+      speech.pitch = 1;            // Nada suara
+      speech.volume = 1;           // Volume maksimal
+
+      // Pilih suara wanita jika tersedia
+      const voices = speechSynthesis.getVoices();
+      const indoVoice = voices.find(v => v.lang === "id-ID");
+      if (indoVoice) speech.voice = indoVoice;
+
+      speechSynthesis.speak(speech);
+
+    }
+
+  }, 2500); // Muncul setelah loading selesai
+
+});
+</script>
+<script>
+let aiSpoken = false;
+
+document.addEventListener("click", function() {
+
+  if (aiSpoken) return;
+  aiSpoken = true;
+
+  const text = "Halo, perkenalkan saya asisten dari Rama. Selamat datang di portfolio Rama. Senang bertemu dengan anda.";
+
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "id-ID";
+  speech.rate = 0.9;
+  speech.pitch = 1;
+
+  speechSynthesis.speak(speech);
+
+});
+</script>
 
  </head>
  
@@ -631,7 +684,7 @@ document.getElementById("godTerminal").style.display="none";
 <div class="lightning"></div>
 <div class="zap"></div>
 <div id="clock"></div>
-<div id="loader">INITIALIZING AI...</div>
+<div id="loader">LOADING BENTAR YA GANTENG...</div>
 
 <audio id="click">
 <source src="https://assets.mixkit.co/sfx/preview/mixkit-interface-click-1126.mp3">
@@ -686,7 +739,7 @@ document.getElementById("godTerminal").style.display="none";
               <div class="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center font-bold text-lg">
                 RS
               </div>
-              <span class="font-semibold text-lg">Portfolio</span>
+              <span class="font-semibold text-lg">RAMA MAULANA SILALAHI</span>
             </div>
             <div class="hidden md:flex items-center gap-8">
               <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors">Beranda</a>
@@ -1167,13 +1220,13 @@ Membantu mahasiswa dalam praktikum pemrograman dasar, basis data, dan web develo
 
   </div>
 </div>
-</body>
+
+
+
+<div id="tech" class="max-w-xl mx-auto space-y-6 reveal">
 <h3 class="text-3xl font-bold mb-10 text-center cyber-glow">
 🚀 Tech Stack
 </h3>
-
-<div id="tech" class="max-w-xl mx-auto space-y-6 reveal">
-
 <div class="tech">
 ⚡ HTML
 <div class="bar"><span style="width:90%"></span></div>
@@ -1216,5 +1269,5 @@ Membantu mahasiswa dalam praktikum pemrograman dasar, basis data, dan web develo
 <footer class="text-center py-10 border-t border-slate-700 text-gray-400">
 © 2026 Rama Maulana Silalahi — Informatics Engineering Student
 </footer>
-
+</body>
 </html>
